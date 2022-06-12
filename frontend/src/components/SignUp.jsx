@@ -12,6 +12,7 @@ class SignUp extends Component {
         };
     }
 
+
     handleUsernameChange = (e) => {
         this.setState({
             username: e.target.value
@@ -39,14 +40,14 @@ class SignUp extends Component {
     }
 
     registerNewAccount = async (params) => {
-        var response = await Axios.post('http://localhost:3001/register', params);
+        var response = await Axios.post('http://localhost:49160/register', params);
         console.log(response.data.message);
         return response.data.userId;
     }
 
     getUserInfo = async (id) => {
         console.log('user id', id);
-        var response = await Axios.get(`http://localhost:3001/user/${id}`, {});
+        var response = await Axios.get(`http://localhost:49160/user/${id}`, {});
         return response;
     }
 
